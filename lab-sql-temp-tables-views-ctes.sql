@@ -66,7 +66,7 @@ from customer_report c1
 left join temp_money_per_cust tmp on c1.customer_id = tmp.customer_id)
 
 select first_name, last_name, email, rental_count, total_amount_paid, 
-CASE WHEN total_amount_paid <> 0 THEN rental_count / total_amount_paid ELSE NULL END AS average_payment_per_rental
+CASE WHEN total_amount_paid <> 0 THEN  total_amount_paid/rental_count ELSE NULL END AS average_payment_per_rental
 from total_join;
 
 SELECT *
